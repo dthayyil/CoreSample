@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SiemensGamesa.Core/bin/Debug/netcoreapp3.1
+/.vs/SiemensGamesa
+/SiemensGamesa.Core/obj
+/SiemensGamesa.Database/obj/Debug
+/SiemensGamesa.Model/bin/Debug/netcoreapp3.1
+/SiemensGamesa.Model/obj
+/SiemensGamesa.Services/bin/Debug/netcoreapp3.1
+/SiemensGamesa.Services/obj/Debug/netcoreapp3.1
+/SiemensGamesa.Services/obj
+/SiemensGamesa.Web/bin/Debug/netcoreapp3.1
+/SiemensGamesa.Web/obj

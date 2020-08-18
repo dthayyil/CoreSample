@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SiemensGamesa.Model.WeatherRanges.WeatherRangesViewModel>
+
+@{
+    ViewData["Title"] = "WeatherRanges";
+}
+
+<div>
+    <p>
+        <button class="btn btn-sm btn-primary" type="submit" data-toggle="modal" data-target="#Create">Add New</button>
+    </p>
+    <table class="table" id="WeatherRangesTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Min)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Max)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adjective)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Min)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Max)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adjective)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </td>
+                    <td>  @{ await Html.RenderPartialAsync("Delete", item.Id); }</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="Create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Add new</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
+                </div>
+                <div class="modal-body">
+                    @await Html.PartialAsync("Create",new WeatherRangesViewModel())
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+            $(document).ready(function () {
+                $('#WeatherRangesTable').DataTable();
+            });
+        </script>
+    }
+
+
+</div>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiemensGamesa.Core\SiemensGamesa.Core.csproj" />
+    <ProjectReference Include="..\SiemensGamesa.Model\SiemensGamesa.Model.csproj" />
+  </ItemGroup>
+
+</Project>
